@@ -19,5 +19,5 @@ fi
 cd $SCRIPT_DIR
 
 cleancss -o dist/bundle.min.css -O2 removeDuplicateRules:on dist/bundle.css && \
-uglifyjs dist/bundle.js -o dist/bundle.min.js && \
+uglifyjs -o dist/bundle.min.js dist/bundle.js && \
 sed -E 's/dist\/bundle/bundle\.min/g' < index.html > dist/index.html
